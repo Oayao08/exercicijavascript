@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicis</title>
+  </head>
+  <body>
+    <p>Edat</p>
+    <input type="text" id="edad" />
+    <button id="btn">Click</button>
+    <p id="resultado">...</p>
+  </body>
+
+  <script>
+    const inputEdat = document.querySelector("#edad");
+    const btn = document.querySelector("#btn");
+    const resultado = document.querySelector("#resultado");
+    function verificarEdats() {
+      let edat = Number(inputEdat.value);
+
+      if (edat >= 18) {
+        document.getElementById("#resultado").innerHTML =
+          "<h3>Ets major d'edat</h3>";
+        console.log("Major d'edat");
+      } else if (13 <= edat) {
+        document.getElementById("#resultado").innerHTML =
+          "<h3>Ets adolescent</h3>";
+        console.log("Adolescent");
+      } else if (edat <= 13) {
+        document.getElementById("#resultado").innerHTML =
+          "<h3>Ets menor d'edat</h3>";
+        console.log("Menor d'edat");
+      } else {
+        document.getElementById("#resultado").innerHTML =
+          "<h3>Edat no vàlida</h3>";
+        console.log("Edat no vàlida");
+      }
+    }
+    btn.addEventListener("click", verificarEdats);
+  </script>
+</html>
