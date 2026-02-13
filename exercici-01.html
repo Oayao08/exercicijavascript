@@ -3,41 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercicis</title>
+    <title>Document</title>
+    <style>
+      .correcto {
+        border: green solid 2px;
+      }
+      
+      .incorrecto {
+        border: red solid 2px;
+      }
+    </style>
   </head>
   <body>
-    <p>Edat</p>
-    <input type="text" id="edad" />
-    <button id="btn">Click</button>
-    <p id="resultado">...</p>
-  </body>
+    <label>Edat</label>
+    <input type="text" id="edat" />
+    <button id="btn">Comprovar</button>
+    <p id="resultado"></p>
+    <p id="resultado2"></p>
+    <script>
+      // APUNTES
+      /*
+          == COMPARA
+          ! NEGAR
+          != COMPARAR Y NEGAR
+          */
+      //APP EDAT
 
-  <script>
-    const inputEdat = document.querySelector("#edad");
-    const btn = document.querySelector("#btn");
-    const resultado = document.querySelector("#resultado");
-    function verificarEdats() {
-      let edat = Number(inputEdat.value);
+      const inputEdat = document.querySelector("#edat");
+      const resultado = document.querySelector("#resultado");
+      const btn = document.querySelector("#btn");
 
-      
-      if (edat >= 18) {
-        document.getElementById("#resultado").innerHTML =
-          "<h3>Ets major d'edat</h3>";
-        console.log("Major d'edat");
-      } else if (13 <= edat) {
-        document.getElementById("#resultado").innerHTML =
-          "<h3>Ets adolescent</h3>";
-        console.log("Adolescent");
-      } else if (edat <= 13) {
-        document.getElementById("#resultado").innerHTML =
-          "<h3>Ets menor d'edat</h3>";
-        console.log("Menor d'edat");
-      } else {
-        document.getElementById("#resultado").innerHTML =
-          "<h3>Edat no vàlida</h3>";
-        console.log("Edat no vàlida");
+      function verificarEdat() {
+        //CONDICIONALES
+        if (inputEdat.value >= 18) {
+          console.log("eres Major d'edat");
+          resultado.innerHTML = inputEdat.value;
+          resultado.classList.add("correcto");
+          resultado.classList.remove("incorrecto");
+          console.log(resultado.classList);
+        } else {
+          console.log("Eres menor d'edat");
+          resultado.innerHTML = inputEdat.value;
+          resultado.classList.add("incorrecto");
+          resultado.classList.remove("correcto");
+          console.log(resultado.classList);
+        }
       }
-    }
-    btn.addEventListener("click", verificarEdats);
-  </script>
+      btn.addEventListener("click", verificarEdat);
+    </script>
+  </body>
 </html>
