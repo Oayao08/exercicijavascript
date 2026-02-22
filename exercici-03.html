@@ -7,6 +7,57 @@
     </title>
 </head>
 <body>
-    
+    <h2>Taula de multiplicar</h2>
+
+    <!-- Taula amb vora--> 
+    <table border="1">
+
+    <!--Esto es la capcçelera de la tabla-->
+        <thead>
+            <tr>
+                <th>Operació</th> <!--Columna 1-->
+                <th>Resultat</th> <!--Columna 2-->
+            </tr>
+            <tr>
+                <th>Operació</th> <!--Columna 1-->
+                <th>Resultat</th> <!--Columna 2-->
+            </tr>
+        </thead>
+       
+        <!-- Cuerpo tabla, filas de JavaScript-->
+        <tbody id="taula5">
+        </tbody>
+        <tbody id="taula6">
+        </tbody>
+    </table>
+
+    <script>
+        let numero = 5;
+        let numero = 6;
+        
+        //Seleccionar <tbody> id
+        let taula = document.getElementById("taula5");
+        
+        // Bucle que va del 1 al 10
+        for (let i = 1; i <= 10; i++) {
+            //Crear fila nueva
+            let fila = "<tr>";
+            
+            //Primera columna operación (5 * i)
+            fila += "<td>" + numero + " x " + i + "</td>";
+            
+            // i++ SUMA 1 CADA VEZ
+
+            // Segunda columna resultado de multiplicación
+            fila += "<td>" + (numero * i) + "</td>";
+            
+            //Tancar la fila
+            fila += "</td>";
+            
+            // Afegir la fila al cuerpo de la tabla
+            taula.innerHTML += fila;   
+        }
+    </script>
+
 </body>
 </html>
