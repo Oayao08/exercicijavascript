@@ -10,7 +10,20 @@
     <!--Utilitza un bucle for del 1 al 20
 Dins del bucle, utilitza un condicional per mostrar només els números parells
 Mostra’ls per consola o dins d’un div-->
+    <div id="Resultado"></div>
 
 
+    <script>
+        let Resultado = document.querySelector("#Resultado");
+
+
+        for (let i = 2; i <= 20; i += 2) { //la doble suma (i++) es una abreviación que he aprendido, seria estandar equivalente a i + 2
+            
+            if (i % 2 == 0) {
+            Resultado.innerHTML += "<h1>" + i + "</h1>";
+            console.log(i);                 
+            }
+        }
+    </script>
 </body>
 </html>
