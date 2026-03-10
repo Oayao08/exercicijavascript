@@ -7,6 +7,21 @@
     </title>
 </head>
 <body>
-    
+    <!--Crea una llista buida (<ul>)
+Utilitza un bucle for per crear 5 elements de llista (<li>)
+Cada element ha de dir “Tasca ” seguit del número (Tasca 1, Tasca 2, etc.)-->
+
+    <ul id="lista"></ul>
+
+    <script>
+        let lista = document.querySelector("#lista");
+ 
+        for (let i; lista = "<li>Tasca" + i + "</li>"; i = i + 1) {
+        if (i === 5) {
+        break; // Surt del bucle quan i és 5
+        }
+        console.log(i);
+        }
+    </script>    
 </body>
 </html>

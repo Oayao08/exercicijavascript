@@ -1,42 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicis
-    </title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .container {
+                display: flex;
+                gap: 20px;
+            }
 
-    <style>
-        .blau {
-            border: 2px blue solid;
-        }
+            .caja {
+                height: 100px;
+                width: 100px;
+                background: green;                
+            }
 
-        .groc {
-            border: 2px yellow solid;
-        }
+            .contador {
+                height: 100px;
+                width: 100px;
+                border: 2px black solid; 
+                color: white;               
+            }
 
-        .verd {
-            border: 2px green solid;
-        }
-    </style>
-    <div>
-        <button id="btn">
-            Fes click!
-            <p class="blau"></p>
-            <p class="groc"></p>
-            <p class="verd"></p>
-        </button>
-    </div>
+            .azul { background: blue;}
+            .amarillo { background: yellow;}
+            .verde { background: green;}
+        </style>
+    </head>
+    <body>
+        <!--Exercici 4: Comptador amb estats
+        Crea un div clicable
+        Implementa un comptador que canviï el color segons el valor:
+        0-4: fons blau
+        5-9: fons groc
+        10 o més: fons verd
+        Mostra el valor del comptador dins del div-->
 
+        <div class="contador caja"></div>
+        <div class="container">
+            <div class="contador azul">Contador 1</div>
+            <div class="contador amarillo">Contador 2</div>
+            <div class="contador verde">Contador 3</div>
+        </div>
 
-    <script>
-        const btn = document.querySelector("#btn");
-        let comptador = numero
-        function comptador() {
-            if (comptador <= 10)    
-        }
-    </script>
-</body>
+        <script>
+            console.log("Funciona");
+
+            let caja = document.querySelector(".caja");
+            let azul = document.querySelector(".azul");
+            let amarillo = document.querySelector(".amarillo");
+            let verde = document.querySelector(".verde");
+
+            azul.addEventListener("click", ColorAzul);
+            amarillo.addEventListener("click", ColorAmarillo);
+            verde.addEventListener("click", ColorVerde);
+            
+            console.log(azul);
+            console.log(verde);
+
+           function ColorAzul () {
+                caja.classList.add("azul");
+                caja.classList.remove("amarillo", "verde");
+            }            
+           function ColorAmarillo () {
+                caja.classList.add("amarillo");
+                caja.classList.remove("azul", "verde");
+            }            
+           function ColorVerde () {
+                caja.classList.add("verde");
+                caja.classList.remove("amarillo", "azul");
+            }            
+
+            console.log(ColorAzul);
+            console.log(ColorAmarillo);
+            console.log(ColorVerde);
+        </script>
+        
+    </body>
 </html>
